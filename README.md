@@ -17,3 +17,8 @@ Create the executable using "make" cmd
 
 Usage of program:
 $ ./gran_schimit < [filename]
+
+
+The two input files included are to be used to test program output. I have not manually tested the first input file,
+however the second one (in R4) is from a textbook where the values it produced matches what the textbook states is the answer
+so the program should reliably work (hopefully???).

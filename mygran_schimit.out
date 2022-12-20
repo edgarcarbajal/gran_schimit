@@ -1,0 +1,31 @@
+
+Set of vectors S in R4
+Vector #1:
+[1, 1, 1, 0]
+Vector #2:
+[-1, 0, -1, 1]
+Vector #3:
+[-1, 0, 0, -1]
+
+Orthogonal set of vectors T transformed from S using Gran-Schmit
+Vector #1:
+[1, 1, 1, 0]
+Vector #2:
+[-0.333333, 0.666667, -0.333333, 1]
+Vector #3:
+[-0.8, 0.6, 0.2, -0.6]
+
+To obtain orthonormal vectors of T, just multiply the reciprocal of each vector's magnitude to itself!
+[ie: (1/|Vi|)*Vi = Ui <--- unit vector of Vi]
+Will still calculate if want a refrence...
+Vector #1's magnitude: 1.73205
+Vector #2's magnitude: 1.29099
+Vector #3's magnitude: 1.18322
+
+Orthonormal set of vectors T* (T_new) transformed from T by multiplying each vector's magnitude reciprocal
+Vector #1:
+[0.57735, 0.57735, 0.57735, 0]
+Vector #2:
+[-0.258199, 0.516398, -0.258199, 0.774597]
+Vector #3:
+[-0.676123, 0.507093, 0.169031, -0.507093]

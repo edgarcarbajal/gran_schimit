@@ -38,7 +38,7 @@ int main()
 	}
 
 
-	std::cout << "Set of vectors S in R" << vector_set_S[0].size() << '\n';		//print vectors before transf.
+	std::cout << "\nSet of vectors S in R" << vector_set_S[0].size() << '\n';		//print vectors before transf.
 	for(size_t i = 0; i < vector_set_S.size(); i++)
 	{
 		std::cout << "Vector #" << (i+1) << ":\n";
@@ -49,11 +49,39 @@ int main()
 	gran_schmit(vector_set_S, vector_set_T);	//transf. vectors
 
 
-	puts("Orthogonal set of vectors T transformed from S using Gran-Schmit");	//print new orthgonal vectors
+	puts("\nOrthogonal set of vectors T transformed from S using Gran-Schmit");	//print new orthgonal vectors
 	for(size_t i = 0; i < vector_set_T.size(); i++)
 	{
 		std::cout << "Vector #" << (i+1) << ":\n";
 		print_vect(vector_set_T[i]);
+	}
+
+
+
+	puts("\nTo obtain orthonormal vectors of T, just multiply the reciprocal of each vector's magnitude to itself!");
+	puts("[ie: (1/|Vi|)*Vi = Ui <--- unit vector of Vi]");
+	puts("Will still calculate if want a refrence...");
+
+
+	double magnitude_temp = 0;
+	std::vector<std::vector<double>> vector_set_Tnew(vector_set_T.begin(), vector_set_T.end()); // New set for orthonormal
+
+	for(size_t i = 0; i < vector_set_Tnew.size(); i++)
+	{
+		magnitude_temp = sqrt(innerprod(vector_set_Tnew[i], vector_set_Tnew[i]));	// |v| = sqrt[(v,v)]
+
+		std::cout << "Vector #" << (i+1) << "'s magnitude: " << magnitude_temp << '\n';
+
+		scal_mult_vect(vector_set_Tnew[i], (1/magnitude_temp));	//change vector copies in T* to be orthonormal
+	}
+
+
+
+	puts("\nOrthonormal set of vectors T* (T_new) transformed from T by multiplying each vector's magnitude reciprocal");	//print new orthonormal vectors
+	for(size_t i = 0; i < vector_set_Tnew.size(); i++)
+	{
+		std::cout << "Vector #" << (i+1) << ":\n";
+		print_vect(vector_set_Tnew[i]);
 	}
 
 	return 0;
